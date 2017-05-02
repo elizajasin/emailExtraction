@@ -1,6 +1,7 @@
 __author__ = 'elizajasin'
 
 import os
+from py2casefold import casefold
 
 def readData(path):
     data = []
@@ -10,7 +11,11 @@ def readData(path):
             if file.endswith(".txt"):
                 f=open(os.path.join(subdir, file),'r')
                 a = f.read()
-                data.append(a)
+                data.append(str(a))
                 f.close()
     return data
 
+def caseFolding (data):
+    for i in range(len(data)):
+        data[i] = casefold(data[i])
+    return data
