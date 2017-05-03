@@ -11,6 +11,9 @@ def readData(path):
             if file.endswith(".txt"):
                 f=open(os.path.join(subdir, file),'r')
                 a = f.read()
+                # print(f)
+                if (file == 0) :
+                    print(str(a))
                 data.append(str(a))
                 f.close()
     return data
